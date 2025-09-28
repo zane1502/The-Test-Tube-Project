@@ -6,7 +6,7 @@ from fastapi import FastAPI
 from typing import  List
 import random
 
-app = FastAPI
+app = FastAPI()
 
 transactions = []
 

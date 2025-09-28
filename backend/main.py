@@ -3,7 +3,6 @@
 # http_client = Client("https://api.devnet.solana.com")
 
 from fastapi import FastAPI
-from typing import  List
 import random
 
 app = FastAPI()

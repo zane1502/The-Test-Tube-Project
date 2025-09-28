@@ -1,1 +1,1 @@
-this is a readme file
+The test tube project is a Decentralised finance solution for the growing crypto market in African Student Campuses

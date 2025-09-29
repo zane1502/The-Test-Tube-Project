@@ -8,13 +8,15 @@ st.write("Simulated Solana Pay + AI Analytics")
 
 st.subheader("💳 Make a Payment")
 with st.form("payment_form"):
-    user = st.text_input("User", "Samuel")
+    recipient = st.text_input("Recipient (Solana address)", "LZ39wzJ63kXPLU5b1GuZZbdJAuEaB6fycy7aFbvMfbj")
     amount = st.number_input("Amount", min_value=0.0, step= 0.01)
     submitted = st.form_submit_button("Send Payment")
 
     if submitted:
-        response = requests.post(url= f"{API_URL}/pay",
-                                 params= {"user": user, "amount":amount})
+        response = requests.post(f"{API_URL}/pay", json={
+            "recipient": recipient,
+            "amount": amount
+        })
 
         if response.status_code == 200:
             st.success(f"Payment Successful: {response.json()['transaction']}")
